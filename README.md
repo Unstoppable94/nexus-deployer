@@ -1,6 +1,3 @@
-docker run -e REPO="http://192.168.101.93:8081/repository/thirdparty/" -v /opt/nexus/build/repository:/upload/repository --rm winhong/nexus-deployer:1.0
-
-
 # nexus-deployer
 ---------
 ## 概述
