@@ -2,6 +2,7 @@ package com.wingarden.nexus;
 
 import java.io.File;
 
+import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,7 +57,7 @@ public class ArtifactDeployer {
 		String uploadUrl = this.repoUrl + artifactPath;
 		logger.info("[uploadurl] {}",uploadUrl);
 		HttpResponse<String> jsonResponse = Unirest.put(uploadUrl).basicAuth(this.userName, this.passwd)
-				.field("file", artifact).asString();
+				.body(FileUtils.readFileToByteArray(artifact)).asString();
 		logger.info("[{}] [{}]",jsonResponse.getStatus(),jsonResponse.getStatusText());
 	}
 }
