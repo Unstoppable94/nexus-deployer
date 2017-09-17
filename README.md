@@ -1,15 +1,14 @@
 # nexus-deployer
----------
 ## 概述
----
+
 本工具用于向sonatype nexus3上传artifact文件。对于在[`mvrepository`](http://mvnrepository.com/)或者其它不位于任何第三方maven repository中的jar包，可以通过本工具上传至nexus3中，该类jar包应上传至[`thirdparty库`](http://192.168.101.93:8081/repository/thirdparty/)。
 
 ## 先决条件
----
+
 * 可以访问sonatype nexus环境 http://192.168.101.93:8081
 
 ## 使用
----
+
 ### 编绎
 
     git clone http:/10.0.2.50:180/wingrow/nexus-deployer.git  ##下载源代码
