@@ -25,7 +25,7 @@ public class Main {
 			artifacts.addAll(getConfigFiles(deployArgs.configFile));
 		}
 		if (null == deployArgs.baseDir || !deployArgs.baseDir.exists()) {
-			System.out.println("baseDir is not set,use the default path");
+			System.out.println("BaseDir has not been set,use the default path");
 			deployArgs.baseDir = new File("");
 		}
 
@@ -38,7 +38,7 @@ public class Main {
 			}
 		}
 		
-		System.out.println("Source artifacts:" + artifacts.toString());
+		System.out.println("Original artifacts:" + artifacts.toString());
 		deploy(artifacts, deployArgs);
 		System.out.println("finished!");
 	}
@@ -61,7 +61,6 @@ public class Main {
 	}
 
 	private static void deploy(List<File> artifacts, DeployArgs args) {
-		System.err.println(args);
 		ArtifactDeployer deployer = new ArtifactDeployer();
 		String[] upwd = args.upwd.split(":");
 		if (upwd.length != 2) {
